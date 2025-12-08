@@ -1,0 +1,432 @@
+:root {
+  --bg: #050608;
+  --panel: #090b11;
+  --border: #151720;
+
+  --text: #d0d5dd;
+  --soft-text: #4c7257;
+
+  --accent-green: #00ff66;
+  --cmd-green: #46ff7a;
+
+  --prompt-color: #3ca9ff;
+  --output-text: #f8f8f2;
+}
+
+/* ====== Base ====== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Fira Code", monospace;
+  height: 100%;
+}
+
+/* ====== Branding ====== */
+
+.branding {
+  position: fixed;
+  top: 10px;
+  left: 18px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  color: var(--accent-green);
+}
+
+.brand-role {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}
+
+/* ====== Layout ====== */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  padding: 3rem 1.5rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.card-wrapper {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ====== Chain (static) ====== */
+
+.pendulum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hanger-strap {
+  width: 4px;
+  height: 80px;
+  background: #111;
+}
+
+.hanger-ring {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 3px solid #111;
+}
+
+.card-swing {
+  margin-top: 4px;
+  transform: rotate(0deg) !important;
+}
+
+/* ====== Neon Glass ID Card + Hover Tilt ====== */
+
+.id-card {
+  width: 220px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  /* Hover tilt variables */
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+
+  transform: rotateY(var(--tilt-y)) rotateX(var(--tilt-x));
+  transition: transform 0.2s ease-out;
+
+  border-radius: 22px;
+  background: radial-gradient(circle at top, #141826, #050608);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(0, 0, 0, 0.9);
+
+  outline: 1px solid rgba(0, 0, 0, 0.6);
+  outline-offset: -4px;
+}
+
+/* Glow border */
+.id-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(0, 255, 102, 0.18);
+  box-shadow:
+    0 0 18px rgba(0, 255, 102, 0.22),
+    0 0 40px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+/* Shine sweep */
+.id-card::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 5%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  transform: translateX(-30%);
+  opacity: 0;
+  transition: 0.6s ease-out;
+  pointer-events: none;
+}
+
+.id-card:hover::after {
+  opacity: 0.3;
+  transform: translateX(25%);
+}
+
+/* Card content */
+
+.id-card-body {
+  padding: 1.2rem 1.1rem 1.4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.id-card-logo span {
+  border: 1px solid var(--accent-green);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--accent-green);
+}
+
+.id-card-photo {
+  margin-top: 1.2rem;
+  align-self: center;
+  width: 120px;
+  height: 155px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 102, 0.35);
+  box-shadow: 0 0 16px rgba(0, 255, 102, 0.15);
+}
+
+.id-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.1);
+}
+
+.id-name {
+  font-size: 1.1rem;
+  color: #e8ffe8;
+}
+
+.id-role {
+  font-size: 0.8rem;
+  color: #92f0aa;
+}
+
+.id-tag {
+  font-size: 0.7rem;
+  color: #5e7d66;
+}
+
+.card-caption {
+  margin-top: 0.7rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--soft-text);
+}
+
+/* ====== Neon terminal grid under card ====== */
+
+.card-grid {
+  margin-top: 1rem;
+  width: 260px;
+  height: 150px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(circle at top, #0b1512, #020404);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  box-shadow:
+    0 0 18px rgba(0, 255, 102, 0.15),
+    0 18px 40px rgba(0, 0, 0, 0.9);
+}
+
+/* moving grid lines */
+.card-grid::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 255, 102, 0.16) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 255, 102, 0.16) 1px,
+      transparent 1px
+    );
+  background-size: 16px 16px;
+  opacity: 0.7;
+  animation: gridPan 18s linear infinite;
+}
+
+/* soft glowing dots */
+.card-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 255, 102, 0.45) 0,
+    transparent 45%
+  );
+  background-size: 42px 42px;
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  animation: gridPulse 3.8s ease-in-out infinite alternate;
+}
+
+.card-grid-label {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0, 255, 102, 0.7);
+}
+
+/* Grid animations */
+@keyframes gridPan {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(16px, 16px, 0);
+  }
+}
+
+@keyframes gridPulse {
+  from {
+    opacity: 0.22;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+/* ====== Terminal ====== */
+
+.terminal-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 90px);
+}
+
+.terminal {
+  background: var(--bg);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  background: #020303;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 0.3rem;
+  margin-right: 0.75rem;
+}
+
+.btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.red { background: #ff5f57; }
+.yellow { background: #febc2e; }
+.green { background: #28c840; }
+
+.window-title {
+  font-size: 0.78rem;
+  color: #6aff9f;
+}
+
+/* terminal body */
+
+.terminal-body {
+  padding: 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+}
+
+.menu-line {
+  color: var(--cmd-green) !important;
+}
+
+.output-text {
+  color: var(--output-text) !important;
+}
+
+.command-text {
+  color: var(--cmd-green) !important;
+}
+
+.error {
+  color: #ff4444 !important;
+}
+
+.terminal-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.prompt {
+  color: var(--prompt-color);
+  margin-right: 0.4rem;
+}
+
+.input-area {
+  min-width: 2px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--cmd-green) !important;
+  white-space: pre;
+}
+
+.terminal-line.command-line .input-area {
+  color: var(--cmd-green) !important;
+}
+
+.terminal-footer {
+  margin-top: 0.5rem;
+  font-size: 0.74rem;
+  color: var(--soft-text);
+}
+
+/* ====== Responsive ====== */
+
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+    padding: 3rem 1rem 1rem;
+  }
+  .card-wrapper {
+    order: 2;
+  }
+  .terminal-wrapper {
+    order: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .terminal-body,
+  .prompt,
+  .input-area {
+    font-size: 0.76rem;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Aashish S | Terminal Portfolio</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Top-left name / role -->
+  <header class="branding">
+    <h1 class="brand-name">Aashish S</h1>
+    <p class="brand-role">CSE Student</p>
+  </header>
+
+  <div class="page">
+    <!-- LEFT: Card + grid -->
+    <aside class="card-wrapper">
+      <div class="pendulum">
+        <!-- chain (static) -->
+        <div class="hanger-strap"></div>
+        <div class="hanger-ring"></div>
+
+        <!-- card (with hover tilt) -->
+        <div class="card-swing">
+          <div class="id-card">
+            <div class="id-card-body">
+              <div class="id-card-logo">
+                
+              </div>
+
+              <div class="id-card-photo">
+                <!-- your photo -->
+                <img src="assets\img\Aashish.jpeg" alt="Aashish S" />
+              </div>
+
+              <div class="id-card-info">
+                <h2 class="id-name">Aashish S</h2>
+                <p class="id-role">CS Student &amp; Web Developer</p>
+                <p class="id-tag">@aashishs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- NEW: animated neon grid -->
+      <div class="card-grid">
+        <span class="card-grid-label">dev activity grid</span>
+      </div>
+    </aside>
+
+    <!-- RIGHT: Terminal -->
+    <main class="terminal-wrapper">
+      <section class="terminal">
+        <div class="terminal-header">
+          <div class="window-buttons">
+            <span class="btn red"></span>
+            <span class="btn yellow"></span>
+            <span class="btn green"></span>
+          </div>
+          <div class="window-title">aashish@portfolio: ~</div>
+        </div>
+
+        <div class="terminal-body" id="terminal-body" aria-live="polite"></div>
+      </section>
+
+      <footer class="terminal-footer">
+        <span>Type <strong>help</strong> to see available commands.</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
