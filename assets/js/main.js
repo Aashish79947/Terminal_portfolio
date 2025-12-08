@@ -20,7 +20,7 @@ Available commands:
 `,
   about: `
 Hi, I'm Aashish MK, a Computer Science engineering student from
-GEC Wayanad. I enjoy building web apps, learning OS, and creating
+GEC Wayanad.I enjoy building web apps, learning OS, and creating
 useful tools.
 `,
   projects: `
