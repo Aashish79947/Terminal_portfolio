@@ -19,15 +19,15 @@ Available commands:
   clear           - Clear the terminal
 `,
   about: `
-Hi, I'm Aashish MK, a Computer Science engineering student from
-GEC Wayanad.I enjoy building web apps, learning OS, and creating
-useful tools.
+  Hi, I’m Aashish S, a Computer Science Engineering student at GEC Wayanad,
+  focused on web development, core system concepts, and building impactful software solutions.
+  I love exploring new technologies, taking on creative challenges, and growing as a developer through hands-on projects.
 `,
   projects: `
 Projects:
-  • JSON-based Dynamic Portfolio Builder
-  • Community Skill Trading Platform (concept)
-  • IV Fund Management Sheet
+  • Facebook Login Page Clone : <a href="https://your-facebook-clone-link.com" target="_blank">Facebook Login Page Clone</a><br>
+  • Simple Web Calculator     : <a href="https://your-calculator-link.com" target="_blank">Simple Web Calculator</a><br>
+  • Static portfolio websites : <a href="https://your-portfolio-link.com" target="_blank">Static Portfolio Websites</a>
 `,
   skills: `
 Skills:
@@ -68,6 +68,15 @@ function typeLine(text, className = "") {
     if (className) p.classList.add(className);
     bodyEl.appendChild(p);
 
+    // If the line contains HTML (like <a> or <br>), don't animate char-by-char.
+    // Just render it as HTML.
+    if (text.includes("<a ") || text.includes("<br") || text.includes("</")) {
+      p.innerHTML = text;
+      scrollToBottom();
+      resolve();
+      return;
+    }
+
     let i = 0;
 
     function step() {
@@ -82,6 +91,7 @@ function typeLine(text, className = "") {
     step();
   });
 }
+
 
 async function typeBlock(text, className = "") {
   const lines = text.trim().split("\n");
