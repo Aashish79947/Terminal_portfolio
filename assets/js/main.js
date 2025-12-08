@@ -31,30 +31,41 @@ Projects:
 `,
   skills: `
 Skills:
-  • C, C++, JavaScript
-  • HTML, CSS, Bootstrap
-  • Git, GitHub, VS Code
-  • DBMS Lab (MySQL)
+  • Languages: C, C++, JavaScript
+  • Frontend: HTML, CSS, Bootstrap
+  • Backend Learning: Node.js (Basic)
+  • Databases: MySQL
+  • Tools & Platforms: Git, GitHub, VS Code, Windows + Linux CLI
+  • Concepts: DBMS, OS, Networking basics
 `,
   experience: `
 Experience:
-  • CS Student at GEC Wayanad
-  • Class Representative
-  • Web dev & DBMS lab work
+  • Class Representative, GEC Wayanad  
+    - Coordinated class activities, managed communication, and organized academic workflows.
+
+  • Web Development Projects  
+    - Built multiple frontend projects including a Facebook Login Clone, Web Calculator, and portfolio sites.
+
+  • DBMS & Lab Work  
+    - Hands-on experience with MySQL, schema design, CRUD operations, and DBMS lab projects.
+
 `,
   education: `
 Education:
-  • B.Tech CSE, GEC Wayanad (2023–2027)
+  • B.Tech in Computer Science & Engineering
+    Government Engineering College, Wayanad
+    (2023 – 2027)
+
 `,
   certifications: `
 Certifications:
-  • (Add yours)
+  
 `,
   contact: `
 Contact:
-  • Email: your.email@example.com
-  • GitHub: github.com/YourName
-  • LinkedIn: linkedin.com/in/yourprofile
+  • Email: <a href="mailto:aashishpravitha@gmail.com">aashishpravitha@gmail.com</a>
+  • GitHub: <a href="https://github.com/Aashish79947" target="_blank">github.com/Aashish79947</a><br>
+  • Instagram: <a href="https://www.instagram.com/aah.shyy/?igsh=MXRsNWNobnptcmE2eQ%3D%3D" target="_blank">instagram.com/aah.shyy</a>
 `
 };
 
