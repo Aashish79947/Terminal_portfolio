@@ -32,10 +32,10 @@ Projects:
 `,
   skills: `
 Skills:
-  • Languages: C, C++, JavaScript
+  • Languages: C, Java, C++, Python, JavaScript
   • Frontend: HTML, CSS, Bootstrap
-  • Backend Learning: Node.js (Basic)
-  • Databases: MySQL
+  • Backend Learning: Node.js (Basic),Express(Basic)
+  • Databases: MySQL,MongoDB
   • Tools & Platforms: Git, GitHub, VS Code, Windows + Linux CLI
   • Concepts: DBMS, OS, Networking basics
 `,
