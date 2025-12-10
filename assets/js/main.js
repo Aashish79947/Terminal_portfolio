@@ -25,8 +25,8 @@ Available commands:
 `,
   projects: `
 Projects:
-  • Facebook Login Page Clone(Older version) : <a href="https://your-facebook-clone-link.com" target="_blank">Facebook Login Page Clone</a><br>
-  • Simple Web Calculator     : <a href="https://your-calculator-link.com" target="_blank">Simple Web Calculator</a><br>
+  • Facebook Login Page Clone(Older version) : <a href="https://github.com/Aashish79947/Facebook-Old-Login-Page-Clone" target="_blank">https://github.com/Aashish79947/Facebook-Old-Login-Page-Clone</a><br>
+  • Simple Web Calculator     : <a href="https://github.com/Aashish79947/Web-Calculator" target="_blank">https://github.com/Aashish79947/Web-Calculator</a><br>
   • Static portfolio websites : <a href="https://github.com/Aashish79947/Aashish-s-website" target="_blank">https://github.com/Aashish79947/Aashish-s-website</a>
   • Movie Ticket Reservation System : <a href="https://github.com/Aashish79947/Movie_Reservation" target="_blank">https://github.com/Aashish79947/Movie_Reservation</a>
 `,
