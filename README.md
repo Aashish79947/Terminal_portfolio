@@ -10,7 +10,7 @@ This project reflects my interest in **Computer Science**, **system-level thinki
 ## 🌐 Live Website
 
 🔗 **Production Domain:**  
-https://aashishs.life
+https://aashish79947.github.io/Terminal_portfolio/
 
 ---
 
